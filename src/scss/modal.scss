@@ -1,0 +1,40 @@
+$modal-border-color: rgb(220, 220, 220);
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3000;
+  background-color: rgba(20, 20, 20, 0.3);
+  display: none;
+}
+
+.modal-content {
+  width: 400px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5% auto;
+  border: 1px solid $modal-border-color;
+}
+
+.modal-head {
+  padding: 15px 20px;
+  border-bottom: 1px solid $modal-border-color;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 20px 20px;
+}
+
+.modal-foot {
+  padding: 10px 20px;
+  text-align: right;
+  border-top: 1px solid $modal-border-color;
+}
+
+.modal-content.anim {
+  transition: transform linear;
+}

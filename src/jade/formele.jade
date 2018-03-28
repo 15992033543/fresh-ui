@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 表单元素
+  div
+    h2 输入框
+    input(type="text" placeholder="input something")
+    
+    h2 下拉框
+    div(style="width: 400px")
+      .pretty-select
+        .select-layout
+          .select-container aa
+          i(class="icon-arrow")
+        .option-layout
+          .option-item a
+          .option-item b
+          .option-item c
+      
+    i(class="icon-arrow")
+
+    //- select(style="width: 100px")
+    //-   option(value="bj") 北京
+    //-   option(value="sh") 上海
+    //-   option(value="gz") 广州
+    
+  script.
+    document.title = '表单元素'

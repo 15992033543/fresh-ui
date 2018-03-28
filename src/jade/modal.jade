@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 模态框
+  div
+    button(class="btn btn-primary" id="myBtn") 点击弹出
+
+    .modal(id="myModal")
+      .modal-content.anim
+        .modal-head
+          p 温馨提示
+        .modal-body 
+          p 这是内容这是内容这是内容这是内容这是内容这是内容这是内容
+        .modal-foot
+          button(class="btn btn-default" id="cancelBtn") 取消
+          button(class="btn btn-primary") 确认
+
+  script.
+    document.title = '模态框'
+
+    $('#myBtn').click(function () {
+      $('#myModal').modal('show')
+    })
+
+    $('#cancelBtn').click(function () {
+      $('#myModal').modal('hide')
+    })

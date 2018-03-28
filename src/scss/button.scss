@@ -1,0 +1,132 @@
+// normal
+
+.btn {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
+  padding: 0.5em 1.2em;
+  border-radius: 0.2em;
+  color: #FFFFFF;
+  margin: 0.3em;
+  font-size: 14px;
+  // box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.btn.btn-default {
+  background-color: #FFF;
+  color: #000000;
+}
+
+.btn.btn-primary {
+  background-color: #455BE6;
+}
+
+.btn.btn-success {
+  background-color: #22B570;
+}
+
+.btn.btn-error {
+  background-color: #FF0000;
+}
+
+.btn.btn-warning {
+  background-color: #F0AD4E;
+}
+
+// hover
+
+.btn.btn-default:hover {
+  background-color: #EEEEEE;
+}
+
+.btn.btn-primary:hover {
+  background-color: #253FE6;
+}
+
+.btn.btn-success:hover {
+  background-color: #01A357;
+}
+
+.btn.btn-error:hover {
+  background-color: #E90000;
+}
+
+.btn.btn-warning:hover {
+  background-color: #E99B2D;
+}
+
+// active
+
+.btn.btn-default:active {
+  background-color: #DADADA;
+}
+
+.btn.btn-primary:active {
+  background-color: #132ED7;
+}
+
+.btn.btn-success:active {
+  background-color: #00904D;
+}
+
+.btn.btn-error:active {
+  background-color: #D10000;
+}
+
+.btn.btn-warning:active {
+  background-color: #D58515;
+}
+
+// disabled
+
+.btn.btn-default[disabled], .btn[disabled].btn-default:hover {
+  background-color: #F7F7F7;
+  color: #BBBEC4;
+  cursor: not-allowed;
+}
+
+.btn.btn-primary[disabled], .btn[disabled].btn-primary:hover {
+  background-color: #76B4F5;
+  color: #FFEEEE;
+  cursor: not-allowed;
+}
+
+.btn.btn-success[disabled], .btn[disabled].btn-success:hover {
+  background-color: #88F1C0;
+  color: #FFFFFF;
+  cursor: not-allowed;
+}
+
+.btn.btn-error[disabled], .btn[disabled].btn-error:hover {
+  background-color: #FF7B7B;
+  color: #FFEEEE;
+  cursor: not-allowed;
+}
+
+.btn.btn-warning[disabled], .btn[disabled].btn-warning:hover {
+  background-color: #FFDEB0;
+  color: #FFFFFF;
+  cursor: not-allowed;
+}
+
+// loading
+
+.btn .icon-btn-loading::before {
+  content: "\e97b";
+}
+
+.btn .icon-btn-loading {
+  animation: btn-loading-anim 1s linear infinite;
+  display: inline-block;
+  right: 5px;
+  position: relative;
+}
+
+@keyframes btn-loading-anim {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}

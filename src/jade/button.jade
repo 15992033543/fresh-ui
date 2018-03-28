@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 按钮
+  div
+    h2 普通
+    button(class="btn btn-default") 默认按钮
+    button(class="btn btn-primary") 确定按钮
+    button(class="btn btn-success") 成功按钮
+    button(class="btn btn-error") 错误按钮
+    button(class="btn btn-warning") 警告按钮
+
+    h2 禁用
+    button(class="btn btn-default" disabled="true") 默认按钮（disabled）
+    button(class="btn btn-primary" disabled="true") 确定按钮（disabled）
+    button(class="btn btn-success" disabled="true") 成功按钮（disabled）
+    button(class="btn btn-error" disabled="true") 错误按钮（disabled）
+    button(class="btn btn-warning" disabled="true") 警告按钮（disabled）
+
+    h2 加载
+    button(id="btn-default" class="btn btn-default") 默认按钮
+    button(id="btn-success" class="btn btn-success") 确定按钮
+    button(id="btn-primary" class="btn btn-primary") 提交
+    
+  script.
+    documnet.title = '按钮'
+
+    $('#btn-default').loading('show')
+    $('#btn-success').loading('show')
+    $('#btn-error').loading('show')
+
+    $('#btn-primary').click(function () {
+      $('#btn-primary').loading('show', '正在提交...')
+      setTimeout(function() {
+        $('#btn-primary').loading('hide')
+      }, 2000)
+    })
