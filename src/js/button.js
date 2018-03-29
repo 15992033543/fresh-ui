@@ -1,3 +1,4 @@
+// button
 +function ($) {
   $.fn.loading = function (type, text='加载中...') {
     if (!type) return

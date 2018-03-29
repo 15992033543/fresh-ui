@@ -38,6 +38,11 @@ gulp.task('scss', () => {
     .pipe(gulp.dest('./dev/css'))
 })
 
+gulp.task('font', () => {
+  gulp.src('./src/fonts/*.ttf')
+    .pipe(gulp.dest('./dev/css/fonts'))
+})
+
 gulp.task('watch', () => {
   gulp.watch([ './src/jade/*.jade' ], [ 'jade' ]).on('change', reload)
   gulp.watch(['./src/scss/*.scss'], [ 'scss' ]).on('change', reload)
@@ -58,4 +63,4 @@ gulp.task('server', () => {
   })
 })
 
-gulp.task('default', [ 'server', 'watch' ])
+gulp.task('default', [ 'font', 'jade', 'js', 'scss', 'server', 'watch' ])
