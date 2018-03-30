@@ -9,6 +9,8 @@ const autoprefixer = require('gulp-autoprefixer')
 const concat = require('gulp-concat')
 const order = require('gulp-order')
 const plumber = require('gulp-plumber')
+const uglify = require('gulp-uglify')
+const rename = require('gulp-rename')
 
 gulp.task('jade', () => {
   gulp.src('./src/jade/*.jade')
@@ -50,7 +52,7 @@ gulp.task('watch', () => {
 })
 
 gulp.task('clean', () => {
-  gulp.src('./dev', { read: false }).pipe(clean())
+  gulp.src([ './dev', './dist' ], { read: false }).pipe(clean())
 })
 
 gulp.task('server', () => {
@@ -63,4 +65,42 @@ gulp.task('server', () => {
   })
 })
 
-gulp.task('default', [ 'font', 'jade', 'js', 'scss', 'server', 'watch' ])
+gulp.task('font-build', () => {
+  gulp.src('./src/fonts/*.ttf')
+    .pipe(gulp.dest('./dist/css/fonts'))
+})
+
+gulp.task('css-build', () => {
+  gulp.src('./src/scss/fresh-ui.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: [ 'last 4 versions' ]
+    }))
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(sass({ outputStyle:'compressed' }))
+    .pipe(rename({
+      basename: 'fresh-ui',
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./dist/css'))
+})
+
+gulp.task('js-build', () => {
+  gulp.src('./src/js/*.js')
+    .pipe(order([ 'common.js' ]))
+    .pipe(concat('fresh-ui.js'))
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(gulp.dest('./dist/js'))
+    .pipe(uglify())
+    .pipe(rename({
+      basename: 'fresh-ui',
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./dist/js'))
+})
+
+gulp.task('dev', [ 'font', 'jade', 'js', 'scss', 'server', 'watch' ])
+
+gulp.task('build', [ 'font-build', 'js-build', 'css-build'])
