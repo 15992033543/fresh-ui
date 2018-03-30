@@ -1,5 +1,4 @@
 // normal
-
 .btn {
   border: 1px solid rgba(0, 0, 0, 0.1);
   line-height: 1.5;
@@ -12,73 +11,73 @@
   cursor: pointer;
 }
 
+// default button
 .btn.btn-default {
   background-color: #FFF;
   color: #000000;
+
+  &:hover {
+    background-color: #EEEEEE;
+  }
+
+  &:active {
+    background-color: #DADADA;
+  }
 }
 
+// primary button
 .btn.btn-primary {
   background-color: #455BE6;
+
+  &:hover {
+    background-color: #253FE6;
+  }
+
+  &:active {
+    background-color: #132ED7;
+  }
 }
 
+// success button
 .btn.btn-success {
   background-color: #22B570;
+
+  &:hover {
+    background-color: #01A357;
+  }
+
+  &:active {
+    background-color: #00904D;
+  }
 }
 
+// error button
 .btn.btn-error {
   background-color: #FF0000;
+
+  &:hover {
+    background-color: #E90000;
+  }
+
+  &:active {
+    background-color: #D10000;
+  }
 }
 
+// warning button
 .btn.btn-warning {
   background-color: #F0AD4E;
-}
 
-// hover
+  &:hover {
+    background-color: #E99B2D;
+  }
 
-.btn.btn-default:hover {
-  background-color: #EEEEEE;
-}
-
-.btn.btn-primary:hover {
-  background-color: #253FE6;
-}
-
-.btn.btn-success:hover {
-  background-color: #01A357;
-}
-
-.btn.btn-error:hover {
-  background-color: #E90000;
-}
-
-.btn.btn-warning:hover {
-  background-color: #E99B2D;
-}
-
-// active
-
-.btn.btn-default:active {
-  background-color: #DADADA;
-}
-
-.btn.btn-primary:active {
-  background-color: #132ED7;
-}
-
-.btn.btn-success:active {
-  background-color: #00904D;
-}
-
-.btn.btn-error:active {
-  background-color: #D10000;
-}
-
-.btn.btn-warning:active {
-  background-color: #D58515;
+  &:active {
+    background-color: #D58515;
+  }
 }
 
 // disabled
-
 .btn.btn-default[disabled], .btn[disabled].btn-default:hover {
   background-color: #F7F7F7;
   color: #BBBEC4;
@@ -110,7 +109,6 @@
 }
 
 // loading
-
 .btn .icon-btn-loading::before {
   content: "\e97b";
 }
