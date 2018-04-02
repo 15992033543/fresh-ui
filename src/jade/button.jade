@@ -22,8 +22,6 @@ block content
     button(id="btn-success" class="btn btn-success") 确定按钮
     button(id="btn-primary" class="btn btn-primary") 提交
 
-    button(id="mybtn" class="btn btn-primary") 改变
-    
   script.
     document.title = '按钮'
 
@@ -33,14 +31,6 @@ block content
 
     $('#btn-primary').click(function () {
       $('#btn-primary').loading('show', '正在提交...')
-      setTimeout(function() {
-        $('#btn-primary').loading('hide')
-      }, 2000)
-    })
-
-    $('#mybtn').click(function() {
-      $('#btn-primary').html('子bbb')
-      $('#btn-primary').loading('show', 'hiahiahia')
       setTimeout(function() {
         $('#btn-primary').loading('hide')
       }, 2000)
