@@ -1,3 +1,35 @@
+// color
+$default-bg-color: #FFFFFF;
+$default-font-color: #000000;
+$default-bg-color-hover: #EEEEEE;
+$default-bg-color-active: #DADADA;
+$default-bg-color-disabled: #F7F7F7;
+$default-font-color-disabled: #BBBEC4;
+
+$primary-bg-color: #455BE6;
+$primary-bg-color-hover: #253FE6;
+$primary-bg-color-active: #132ED7;
+$primary-bg-color-disabled: #76B4F5;
+$primary-font-color-disabled: #FFEEEE;
+
+$success-bg-color: #22B570;
+$success-bg-color-hover: #01A357;
+$success-bg-color-active: #00904D;
+$success-bg-color-disabled: #88F1C0;
+$success-font-color-disabled: #FFFFFF;
+
+$error-bg-color: #FF0000;
+$error-bg-color-hover: #E90000;
+$error-bg-color-active: #D10000;
+$error-bg-color-disabled: #FF7B7B;
+$error-font-color-disabled: #FFEEEE;
+
+$warning-bg-color: #F0AD4E;
+$warning-bg-color-hover: #E99B2D;
+$warning-bg-color-active: #D58515;
+$warning-bg-color-disabled: #FFDEB0;
+$warning-font-color-disabled: #FFFFFF;
+
 // normal
 .btn {
   line-height: 1.5;
@@ -17,67 +49,67 @@
 
 // default button
 .btn-default {
-  background-color: #FFF;
-  color: #000000;
+  background-color: $default-bg-color;
+  color: $default-font-color;
 
   &:hover {
-    background-color: #EEEEEE;
+    background-color: $default-bg-color-hover;
   }
 
   &:active {
-    background-color: #DADADA;
+    background-color: $default-bg-color-active;
   }
 }
 
 // primary button
 .btn-primary {
-  background-color: #455BE6;
+  background-color: $primary-bg-color;
 
   &:hover {
-    background-color: #253FE6;
+    background-color: $primary-bg-color-hover;
   }
 
   &:active {
-    background-color: #132ED7;
+    background-color: $primary-bg-color-active;
   }
 }
 
 // success button
 .btn-success {
-  background-color: #22B570;
+  background-color: $success-bg-color;
 
   &:hover {
-    background-color: #01A357;
+    background-color: $success-bg-color-hover;
   }
 
   &:active {
-    background-color: #00904D;
+    background-color: $success-bg-color-active;
   }
 }
 
 // error button
 .btn-error {
-  background-color: #FF0000;
+  background-color: $error-bg-color;
 
   &:hover {
-    background-color: #E90000;
+    background-color: $error-bg-color-hover;
   }
 
   &:active {
-    background-color: #D10000;
+    background-color: $error-bg-color-active;
   }
 }
 
 // warning button
 .btn-warning {
-  background-color: #F0AD4E;
+  background-color: $warning-bg-color;
 
   &:hover {
-    background-color: #E99B2D;
+    background-color: $warning-bg-color-hover;
   }
 
   &:active {
-    background-color: #D58515;
+    background-color: $warning-bg-color-active;
   }
 }
 
@@ -89,37 +121,37 @@
 }
 
 .btn-default[disabled] {
-  @include btn-disabled-mixin(#F7F7F7, #BBBEC4);
+  @include btn-disabled-mixin($default-bg-color-disabled, $default-font-color-disabled);
   &:hover { 
-    @include btn-disabled-mixin(#F7F7F7, #BBBEC4);
+    @include btn-disabled-mixin($default-bg-color-disabled, $default-font-color-disabled);
   }
 }
 
 .btn-primary[disabled] {
-  @include btn-disabled-mixin(#76B4F5, #FFEEEE);
+  @include btn-disabled-mixin($primary-bg-color-disabled, $primary-font-color-disabled);
   &:hover { 
-    @include btn-disabled-mixin(#76B4F5, #FFEEEE);
+    @include btn-disabled-mixin($primary-bg-color-disabled, $primary-font-color-disabled);
   }
 }
 
 .btn-success[disabled] {
-  @include btn-disabled-mixin(#88F1C0, #FFFFFF);
+  @include btn-disabled-mixin($success-bg-color-disabled, $success-font-color-disabled);
   &:hover { 
-    @include btn-disabled-mixin(#88F1C0, #FFFFFF);
+    @include btn-disabled-mixin($success-bg-color-disabled, $success-font-color-disabled);
   }
 }
 
 .btn-error[disabled] {
-  @include btn-disabled-mixin(#FF7B7B, #FFEEEE);
+  @include btn-disabled-mixin($error-bg-color-disabled, $error-font-color-disabled);
   &:hover { 
-    @include btn-disabled-mixin(#FF7B7B, #FFEEEE);
+    @include btn-disabled-mixin($error-bg-color-disabled, $error-font-color-disabled);
   }
 }
 
 .btn-warning[disabled] {
-  @include btn-disabled-mixin(#FFDEB0, #FFFFFF);
+  @include btn-disabled-mixin($warning-bg-color-disabled, $warning-font-color-disabled);
   &:hover { 
-    @include btn-disabled-mixin(#FFDEB0, #FFFFFF);
+    @include btn-disabled-mixin($warning-bg-color-disabled, $warning-font-color-disabled);
   }
 }
 
