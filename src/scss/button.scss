@@ -1,18 +1,22 @@
 // normal
 .btn {
-  border: 1px solid rgba(0, 0, 0, 0.1);
   line-height: 1.5;
   padding: 0.5em 1.2em;
-  border-radius: 0.2em;
   color: #FFFFFF;
   margin: 0.3em;
   font-size: 14px;
   // box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  border: {
+    width: 1px;
+    style: solid;
+    color: rgba(0, 0, 0, 0.1);
+    radius: 0.2em;
+  }
 }
 
 // default button
-.btn.btn-default {
+.btn-default {
   background-color: #FFF;
   color: #000000;
 
@@ -26,7 +30,7 @@
 }
 
 // primary button
-.btn.btn-primary {
+.btn-primary {
   background-color: #455BE6;
 
   &:hover {
@@ -39,7 +43,7 @@
 }
 
 // success button
-.btn.btn-success {
+.btn-success {
   background-color: #22B570;
 
   &:hover {
@@ -52,7 +56,7 @@
 }
 
 // error button
-.btn.btn-error {
+.btn-error {
   background-color: #FF0000;
 
   &:hover {
@@ -65,7 +69,7 @@
 }
 
 // warning button
-.btn.btn-warning {
+.btn-warning {
   background-color: #F0AD4E;
 
   &:hover {
@@ -78,46 +82,57 @@
 }
 
 // disabled
-.btn.btn-default[disabled], .btn[disabled].btn-default:hover {
-  background-color: #F7F7F7;
-  color: #BBBEC4;
+@mixin btn-disabled-mixin($bgcolor, $color) {
+  background-color: $bgcolor;
+  color: $color;
   cursor: not-allowed;
 }
 
-.btn.btn-primary[disabled], .btn[disabled].btn-primary:hover {
-  background-color: #76B4F5;
-  color: #FFEEEE;
-  cursor: not-allowed;
+.btn-default[disabled] {
+  @include btn-disabled-mixin(#F7F7F7, #BBBEC4);
+  &:hover { 
+    @include btn-disabled-mixin(#F7F7F7, #BBBEC4);
+  }
 }
 
-.btn.btn-success[disabled], .btn[disabled].btn-success:hover {
-  background-color: #88F1C0;
-  color: #FFFFFF;
-  cursor: not-allowed;
+.btn-primary[disabled] {
+  @include btn-disabled-mixin(#76B4F5, #FFEEEE);
+  &:hover { 
+    @include btn-disabled-mixin(#76B4F5, #FFEEEE);
+  }
 }
 
-.btn.btn-error[disabled], .btn[disabled].btn-error:hover {
-  background-color: #FF7B7B;
-  color: #FFEEEE;
-  cursor: not-allowed;
+.btn-success[disabled] {
+  @include btn-disabled-mixin(#88F1C0, #FFFFFF);
+  &:hover { 
+    @include btn-disabled-mixin(#88F1C0, #FFFFFF);
+  }
 }
 
-.btn.btn-warning[disabled], .btn[disabled].btn-warning:hover {
-  background-color: #FFDEB0;
-  color: #FFFFFF;
-  cursor: not-allowed;
+.btn-error[disabled] {
+  @include btn-disabled-mixin(#FF7B7B, #FFEEEE);
+  &:hover { 
+    @include btn-disabled-mixin(#FF7B7B, #FFEEEE);
+  }
+}
+
+.btn-warning[disabled] {
+  @include btn-disabled-mixin(#FFDEB0, #FFFFFF);
+  &:hover { 
+    @include btn-disabled-mixin(#FFDEB0, #FFFFFF);
+  }
 }
 
 // loading
-.btn .icon-btn-loading::before {
-  content: "\e97b";
-}
-
-.btn .icon-btn-loading {
+.icon-btn-loading {
   animation: btn-loading-anim 1s linear infinite;
   display: inline-block;
   right: 5px;
   position: relative;
+
+  &:before {
+    content: "\e97b";
+  }
 }
 
 @keyframes btn-loading-anim {

@@ -1,5 +1,5 @@
 // modal
-+function ($) {
+(function ($) {
   class Modal {
     constructor (el) {
       this.el = el
@@ -33,4 +33,4 @@
       }
     }
   }
-}(jQuery)
+}(jQuery))
