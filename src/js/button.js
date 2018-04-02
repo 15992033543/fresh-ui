@@ -1,4 +1,8 @@
-;(function ($) {
+/**
+ * Button
+ * author: hzp
+ */
+(function ($) {
   $.fn.loading = function (type, text='加载中...') {
     if (!type) return
     $(this).each((i, e) => {

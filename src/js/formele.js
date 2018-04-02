@@ -1,4 +1,8 @@
-;(function ($) {
+/**
+ * FormElement
+ * author: hzp
+ */
+(function ($) {
   $(window).on('load', function () {
     const select = $('select[pertty]')
     select.each(function () {

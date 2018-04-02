@@ -1,4 +1,8 @@
-;(function ($) {
+/**
+ * Modal
+ * author: hzp
+ */
+(function ($) {
   class Modal {
     constructor (el) {
       this.el = el

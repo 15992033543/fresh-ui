@@ -22,7 +22,7 @@ gulp.task('js-dev', () => {
   return gulp.src('./src/js/*.js')
     .pipe(plumber())
     .pipe(order([ 'common.js' ]))
-    .pipe(concat('fresh-ui.js'))
+    .pipe(concat('fresh-ui.js', { newLine: ';\r\n\r\n' })  )
     .pipe(babel({
       presets: ['env']
     }))

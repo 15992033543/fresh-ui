@@ -51,11 +51,9 @@ $warning-font-color-disabled: #FFFFFF;
 .btn-default {
   background-color: $default-bg-color;
   color: $default-font-color;
-
   &:hover {
     background-color: $default-bg-color-hover;
   }
-
   &:active {
     background-color: $default-bg-color-active;
   }
@@ -64,11 +62,9 @@ $warning-font-color-disabled: #FFFFFF;
 // primary button
 .btn-primary {
   background-color: $primary-bg-color;
-
   &:hover {
     background-color: $primary-bg-color-hover;
   }
-
   &:active {
     background-color: $primary-bg-color-active;
   }
@@ -77,11 +73,9 @@ $warning-font-color-disabled: #FFFFFF;
 // success button
 .btn-success {
   background-color: $success-bg-color;
-
   &:hover {
     background-color: $success-bg-color-hover;
   }
-
   &:active {
     background-color: $success-bg-color-active;
   }
@@ -90,11 +84,9 @@ $warning-font-color-disabled: #FFFFFF;
 // error button
 .btn-error {
   background-color: $error-bg-color;
-
   &:hover {
     background-color: $error-bg-color-hover;
   }
-
   &:active {
     background-color: $error-bg-color-active;
   }
@@ -103,11 +95,9 @@ $warning-font-color-disabled: #FFFFFF;
 // warning button
 .btn-warning {
   background-color: $warning-bg-color;
-
   &:hover {
     background-color: $warning-bg-color-hover;
   }
-
   &:active {
     background-color: $warning-bg-color-active;
   }
@@ -161,7 +151,6 @@ $warning-font-color-disabled: #FFFFFF;
   display: inline-block;
   right: 5px;
   position: relative;
-
   &:before {
     content: "\e97b";
   }
