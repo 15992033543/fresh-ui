@@ -1,4 +1,3 @@
-// modal
 ;(function ($) {
   class Modal {
     constructor (el) {
