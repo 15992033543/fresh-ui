@@ -8,6 +8,6 @@ if (typeof jQuery === 'undefined') {
   throw new Error('fresh-ui requires jQuery')
 }
 
-$.fn.animEndListener = (callback, duration) => {
+$.fn.animEndListener = (duration, callback) => {
   setTimeout(() => { callback() }, duration)
 }

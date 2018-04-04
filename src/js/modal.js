@@ -6,19 +6,18 @@
   class Modal {
     constructor (el) {
       this.el = el
-      // this.content = this.el.find('.modal-content')
-      // this.content.css('transition-duration', '100ms')
     }
     show () {
       this.el.css('display', 'block')
-      // this.content.css('transform', 'scale(0.95, 0.95)')
-      // this.content[0].offsetWidth // 强制回流，否则transition无效
-      // this.content.css('transform', 'scale(1, 1)')
+      if(this.el.hasClass('anim')) {
+        this.el.css('opacity', 0)
+        this.el[0].offsetWidth
+        this.el.css('opacity', 1).find('.modal-content').addClass('scale-anim').animEndListener(200, () => {
+          this.el.find('.modal-content').removeClass('scale-anim')
+        })
+      }
     }
     hide () {
-      // this.content.css('transform', 'scale(0.95, 0.95)').animEndListener(() => {
-      //   this.el.css('display', 'none')
-      // }, 100)
       this.el.css('display', 'none')
     }
   }

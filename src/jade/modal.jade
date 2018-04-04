@@ -5,6 +5,8 @@ block content
   div
     button(class="btn btn-primary" id="myBtn") 点击弹出
 
+    button(class="btn btn-primary" id="myBtn2") 点击弹出
+
     .modal.anim(id="myModal")
       .modal-content
         .modal-head
@@ -13,6 +15,16 @@ block content
           p 这是内容这是内容这是内容这是内容这是内容这是内容这是内容
         .modal-foot
           button(class="btn btn-default" id="cancelBtn") 取消
+          button(class="btn btn-primary") 确认
+
+    .modal(id="myModal2")
+      .modal-content
+        .modal-head
+          p 温馨提示
+        .modal-body 
+          p ORM2是一款基于Node.js实现的ORM框架，名字相当的霸气，算是同类框架中非常出色的一款，具体介绍请猛击：https://github.com/dresende/node-orm2
+        .modal-foot
+          button(class="btn btn-default" id="cancelBtn2") 取消
           button(class="btn btn-primary") 确认
 
   script.
@@ -24,4 +36,12 @@ block content
 
     $('#cancelBtn').click(function () {
       $('#myModal').modal('hide')
+    })
+
+    $('#myBtn2').click(function () {
+      $('#myModal2').modal('show')
+    })
+
+    $('#cancelBtn2').click(function () {
+      $('#myModal2').modal('hide')
     })
